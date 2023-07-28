@@ -12,7 +12,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default="SECRET")
 
 DEBUG = os.getenv('DEBUG')
 
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(' ')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', 'localhost').split('')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -64,7 +64,7 @@ DATABASES = {
        'ENGINE': 'django.db.backends.postgresql',
        'NAME': os.getenv('POSTGRES_DB', 'kittygram'),
        'USER': os.getenv('POSTGRES_USER', 'kittygram_user'),
-       'PASSWORD': os.getenv('POSTGRES_PASSWORD', ''),
+       'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'kittygram_password'),
        'HOST': os.getenv('DB_HOST', 'db'),
        'PORT': os.getenv('DB_PORT', 5432)
    }
